@@ -18,7 +18,7 @@ function TopCitiesCard(props) {
                 setWindData([response.data.wind]);
                 setMainData([response.data.main]);
             })
-    }, [])
+    }, [props.name])
 
     return (
         <div className='topcities-card'>

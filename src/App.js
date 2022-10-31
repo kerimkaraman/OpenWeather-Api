@@ -20,7 +20,7 @@ function App() {
         setWindData([response.data.wind]);
         setMainData([response.data.main]);
       })
-  }, [search])
+  }, [search, cityName])
 
 
   return (
