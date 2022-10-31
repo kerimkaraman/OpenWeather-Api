@@ -11,7 +11,6 @@ function App() {
   const [windData, setWindData] = useState([]);
   const [mainData, setMainData] = useState([]);
   const [cityName, setCityName] = useState('London');
-  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${KEY}`)
@@ -20,7 +19,7 @@ function App() {
         setWindData([response.data.wind]);
         setMainData([response.data.main]);
       })
-  }, [search, cityName])
+  }, [cityName])
 
 
   return (
@@ -43,7 +42,6 @@ function App() {
         </div>
         <div>
           <input onChange={(e) => { setCityName(e.target.value) }} placeholder='City Name (etc:London)' type="text" />
-          <button onClick={() => { setSearch(!search) }}>Search</button>
         </div>
       </div>
       {
